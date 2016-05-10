@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Foundation
 
 class ViewController: UIViewController {
+
     
     var objects = [[String: String]]()
 
@@ -32,26 +32,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print ("viewDidLoad")
-        
-        //read in API
-        let apiURLString = "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=98fa23b7d5b542f2be105b8384512928"
-        
-        print ("viewDidLoad set apiURLString to: ", apiURLString)
-        
-        if let url = NSURL(string: apiURLString) {
-            if let data = try? NSData(contentsOfURL: url, options: []) {
-                let json = JSON(data: data)
-                
-                if json["status"] == "OK" {
-                    parseJSON(json)
-                }
-                
-                else{
-                    print("error parsing JSON")
-                }
-            }
-        }
-    
     
         //set text on screen
         let label = UILabel(frame: CGRectMake(0, 100, 200, 21))
@@ -67,7 +47,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

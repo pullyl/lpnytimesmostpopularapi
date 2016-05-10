@@ -19,6 +19,8 @@
 		895F0C811CE14E690033F2B9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F0C7F1CE14CC70033F2B9 /* SwiftyJSON.swift */; };
 		895F0C821CE14E6A0033F2B9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F0C7F1CE14CC70033F2B9 /* SwiftyJSON.swift */; };
 		895F0C831CE14EDA0033F2B9 /* SwiftyJSON.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = 895F0C7F1CE14CC70033F2B9 /* SwiftyJSON.swift */; };
+		896CDE921CE18D240096DFCC /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896CDE911CE18D240096DFCC /* ArticleViewController.swift */; };
+		898611961CE18860003191CD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898611951CE18860003191CD /* ArticleListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		89322D9E1CE130FD002C683E /* nytimesmostpopularapiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nytimesmostpopularapiUITests.swift; sourceTree = "<group>"; };
 		89322DA01CE130FD002C683E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895F0C7F1CE14CC70033F2B9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		896CDE911CE18D240096DFCC /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		898611951CE18860003191CD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				89322D7B1CE130F0002C683E /* AppDelegate.swift */,
 				89322D7D1CE130F1002C683E /* ViewController.swift */,
 				89322D7F1CE130F2002C683E /* Main.storyboard */,
+				898611951CE18860003191CD /* ArticleListViewController.swift */,
+				896CDE911CE18D240096DFCC /* ArticleViewController.swift */,
 				89322D851CE130F3002C683E /* Assets.xcassets */,
 				89322D871CE130F3002C683E /* LaunchScreen.storyboard */,
 				89322D8A1CE130F4002C683E /* Info.plist */,
@@ -266,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898611961CE18860003191CD /* ArticleListViewController.swift in Sources */,
 				89322D7E1CE130F1002C683E /* ViewController.swift in Sources */,
 				89322D7C1CE130F1002C683E /* AppDelegate.swift in Sources */,
+				896CDE921CE18D240096DFCC /* ArticleViewController.swift in Sources */,
 				89322D841CE130F3002C683E /* nytimesmostpopularapi.xcdatamodeld in Sources */,
 				895F0C801CE14CC70033F2B9 /* SwiftyJSON.swift in Sources */,
 			);
