@@ -36,8 +36,6 @@ class ArticleListViewController: UITableViewController {
         print ("ArticleListViewController - viewDidLoad")
         
         //register cell
-        //let myNib = UINib(nibName: "myCell", bundle: nil)
-        //tableView.registerNib(myNib, forCellReuseIdentifier: "UITableViewCell")
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
 
         
@@ -92,14 +90,13 @@ class ArticleListViewController: UITableViewController {
         
         print("ArticleListViewController - tableView: ", indexPath.row)
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DefaultCell")!
+        //let cell = tableView.dequeueReusableCellWithIdentifier("DefaultCell")!
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "DefaultCell")
         
         let object = objects[indexPath.row]
         cell.textLabel!.text = object["title"]
-        //cell.detailTextLabel!.text = object["byline"]
+        cell.detailTextLabel?.text = "Published: " + object["publish_date"]!
         return cell
     }
     
-    //@TODO: Format the cells
-
 }
