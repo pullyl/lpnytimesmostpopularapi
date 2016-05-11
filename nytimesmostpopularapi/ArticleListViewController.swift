@@ -15,8 +15,6 @@ class ArticleListViewController: UITableViewController {
     var objects = [[String: String]]()
     var core_data_array = [NSManagedObject]()
 
-
-    
     func parseJSON(json: JSON) {
         for result in json["results"].arrayValue {
             let title = result["title"].stringValue
@@ -31,37 +29,11 @@ class ArticleListViewController: UITableViewController {
             let obj = ["title": title, "byline": byline, "publish_date": publish_date, "image_url": image_url]
             objects.append(obj)
             
-            //saveData("test")
         }
         
         print("ArticleListViewController - done parsing json")
         
         tableView.reloadData()
-    }
-    
-    func saveData(name:String)
-    {
-        print("ArticleListViewController - saveData")
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        //Data is in this case the name of the entity
-        //let options = NSManagedObject(entity: entity!,
-                                      //insertIntoManagedObjectContext:managedContext)
-        
-        //save to core data
-        let core_object = NSEntityDescription.insertNewObjectForEntityForName("NYTimesApiEntity", inManagedObjectContext: managedContext) as! NYTimesApiEntity
-        core_data_array.append(core_object)
-        
-        //var error: NSError?
-        do {
-            try managedContext.save()
-        } catch let error {
-            print("Could not cache the response \(error)")
-        }
-        //uncomment this line for adding the stored object to the core data array
-        //core_data_array.append(options)
-        print("just added to core data array")
     }
 
     override func viewDidLoad()
@@ -114,8 +86,6 @@ class ArticleListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        //print("ArticleListViewController - tableView: ", indexPath.row)
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "DefaultCell")
         

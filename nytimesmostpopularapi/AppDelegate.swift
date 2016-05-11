@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //navigationController = UINavigationController() -> both of these methods work
         tabController = CustomTabBarViewController()
         navigationController = UINavigationController(rootViewController: tabController!);
-        //self.navigationController!.pushViewController(tabController!, animated: false)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = navigationController
