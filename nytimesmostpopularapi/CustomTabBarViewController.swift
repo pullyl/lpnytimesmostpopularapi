@@ -17,7 +17,7 @@ class CustomTabBarViewController: UITabBarController, UITabBarControllerDelegate
     
     override func viewWillAppear(animated: Bool) {
         print("CustomTabBarViewController - viewWillAppear")
-        let item1 = ViewController()
+        let item1 = ArticleListViewController()
         let icon1 = UITabBarItem(title: "art", image: UIImage(named: "art.png"), selectedImage: UIImage(named: "art.png"))
         item1.tabBarItem = icon1
         

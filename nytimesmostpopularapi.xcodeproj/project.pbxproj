@@ -21,7 +21,7 @@
 		896CDE921CE18D240096DFCC /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896CDE911CE18D240096DFCC /* ArticleViewController.swift */; };
 		8979C7211CE2C3020032ADBD /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 8979C7201CE2C3020032ADBD /* world.png */; };
 		8979C7231CE2C3160032ADBD /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 8979C7221CE2C3160032ADBD /* health.png */; };
-		8979C7251CE2C6360032ADBD /* art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8979C7241CE2C6360032ADBD /* art.jpg */; };
+		8979C7251CE2C6360032ADBD /* art.png in Resources */ = {isa = PBXBuildFile; fileRef = 8979C7241CE2C6360032ADBD /* art.png */; };
 		8979C7271CE2C9D20032ADBD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */; };
 		898611961CE18860003191CD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898611951CE18860003191CD /* ArticleListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		896CDE911CE18D240096DFCC /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		8979C7201CE2C3020032ADBD /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		8979C7221CE2C3160032ADBD /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
-		8979C7241CE2C6360032ADBD /* art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = art.jpg; sourceTree = "<group>"; };
+		8979C7241CE2C6360032ADBD /* art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = art.png; sourceTree = "<group>"; };
 		8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		898611951CE18860003191CD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +124,7 @@
 				89322D8A1CE130F4002C683E /* Info.plist */,
 				89322D821CE130F3002C683E /* nytimesmostpopularapi.xcdatamodeld */,
 				895F0C7F1CE14CC70033F2B9 /* SwiftyJSON.swift */,
-				8979C7241CE2C6360032ADBD /* art.jpg */,
+				8979C7241CE2C6360032ADBD /* art.png */,
 				8979C7221CE2C3160032ADBD /* health.png */,
 				8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */,
 				8979C7201CE2C3020032ADBD /* world.png */,
@@ -256,7 +256,7 @@
 			files = (
 				89322D891CE130F3002C683E /* LaunchScreen.storyboard in Resources */,
 				89322D861CE130F3002C683E /* Assets.xcassets in Resources */,
-				8979C7251CE2C6360032ADBD /* art.jpg in Resources */,
+				8979C7251CE2C6360032ADBD /* art.png in Resources */,
 				8979C7211CE2C3020032ADBD /* world.png in Resources */,
 				8979C7231CE2C3160032ADBD /* health.png in Resources */,
 			);

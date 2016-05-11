@@ -24,7 +24,7 @@ class ArticleListViewController: UITableViewController {
             objects.append(obj)
         }
         
-        print("MasterView - done parsing json")
+        print("ArticleListViewController - done parsing json")
         
         tableView.reloadData()
     }
@@ -36,10 +36,10 @@ class ArticleListViewController: UITableViewController {
         print ("ArticleListViewController - viewDidLoad")
         
         //register cell
-        //self.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
-        let myNib = UINib(nibName: "myCell", bundle: nil)
-        tableView.registerNib(myNib, forCellReuseIdentifier: "UITableViewCell")
+        //let myNib = UINib(nibName: "myCell", bundle: nil)
+        //tableView.registerNib(myNib, forCellReuseIdentifier: "UITableViewCell")
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+
         
         print("registered cell")
 
@@ -92,21 +92,11 @@ class ArticleListViewController: UITableViewController {
         
         print("ArticleListViewController - tableView: ", indexPath.row)
         
-        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath:indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("DefaultCell")!
         
-        print("setup cell")
-        
-        if cell == nil{
-            print("cell == nib")
-            let cellnib = [NSBundle.mainBundle().loadNibNamed("myCell", owner:self, options: nil)]
-            cell = cellnib.first! as! UITableViewCell
-        }
-       
-        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell*/
-
         let object = objects[indexPath.row]
         cell.textLabel!.text = object["title"]
-        cell.detailTextLabel!.text = object["byline"]
+        //cell.detailTextLabel!.text = object["byline"]
         return cell
     }
     
