@@ -33,11 +33,18 @@ class ArticleListViewController: UITableViewController {
     {
         super.viewDidLoad()
         
-        print ("MasterView - viewDidLoad")
+        print ("ArticleListViewController - viewDidLoad")
         
+        //register cell
+        //self.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        let myNib = UINib(nibName: "myCell", bundle: nil)
+        tableView.registerNib(myNib, forCellReuseIdentifier: "UITableViewCell")
+        
+        print("registered cell")
+
         //read in API
         let apiURLString = "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=98fa23b7d5b542f2be105b8384512928"
-        //let apiURLString = "http://localhost/nytimes/data.json"
         
         print ("MasterView - viewDidLoad set apiURLString to: ", apiURLString)
         
@@ -66,8 +73,6 @@ class ArticleListViewController: UITableViewController {
             print("here")
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
-                print("here2")
-                print("there")
                 let controller = (segue.destinationViewController as! UIViewController) as! ArticleViewController
                 controller.details = object
                 
@@ -87,8 +92,17 @@ class ArticleListViewController: UITableViewController {
         
         print("ArticleListViewController - tableView: ", indexPath.row)
         
-        //let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath:indexPath)
+        
+        print("setup cell")
+        
+        if cell == nil{
+            print("cell == nib")
+            let cellnib = [NSBundle.mainBundle().loadNibNamed("myCell", owner:self, options: nil)]
+            cell = cellnib.first! as! UITableViewCell
+        }
+       
+        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell*/
 
         let object = objects[indexPath.row]
         cell.textLabel!.text = object["title"]

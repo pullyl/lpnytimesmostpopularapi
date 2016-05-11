@@ -13,10 +13,19 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabController: CustomTabBarViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        print("AppDelegate - application")
+        
+        tabController = CustomTabBarViewController()
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window!.rootViewController = tabController
+        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 

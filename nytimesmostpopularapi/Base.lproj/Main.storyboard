@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="300" affinity="minY"/>
+                            <userLayoutGuide location="296" affinity="minY"/>
                             <userLayoutGuide location="300" affinity="minY"/>
                             <userLayoutGuide location="300" affinity="minY"/>
                             <userLayoutGuide location="300" affinity="minY"/>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1070" y="1261"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar View Controller-->
         <scene sceneID="Y6h-Tq-vJz">
             <objects>
-                <tabBarController id="qa6-Uu-hb3" sceneMemberID="viewController">
+                <tabBarController id="qa6-Uu-hb3" customClass="CustomTabBarViewController" customModule="nytimesmostpopularapi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="7r6-65-xXr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -143,7 +143,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="health.png" width="800" height="800"/>
-        <image name="world.png" width="600" height="512"/>
+        <image name="health.png" width="30" height="30"/>
+        <image name="world.png" width="30" height="30"/>
     </resources>
 </document>

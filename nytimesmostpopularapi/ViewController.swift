@@ -12,20 +12,6 @@ class ViewController: UIViewController {
 
     
     var objects = [[String: String]]()
-
-    
-    func parseJSON(json: JSON) {
-        for result in json["results"].arrayValue {
-            let title = result["title"].stringValue
-            let byline = result["byline"].stringValue
-            let obj = ["title": title, "byline": byline]
-            objects.append(obj)
-        }
-        
-        print("done parsing json")
-        
-        //tableView.reloadData()
-    }
     
     override func viewDidLoad()
     {
