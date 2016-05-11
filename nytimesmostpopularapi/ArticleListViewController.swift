@@ -11,8 +11,8 @@ import UIKit
 
 class ArticleListViewController: UITableViewController {
     
-    var articleViewController: ArticleViewController? = nil
     var objects = [[String: String]]()
+
     
     func parseJSON(json: JSON) {
         for result in json["results"].arrayValue {
@@ -64,19 +64,6 @@ class ArticleListViewController: UITableViewController {
 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("ArticleListViewController - prepareForSegue")
-        
-        if segue.identifier == "showArticle" {
-            print("here")
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
-                let controller = (segue.destinationViewController as! UIViewController) as! ArticleViewController
-                controller.details = object
-                
-            }
-        }
-    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -98,5 +85,19 @@ class ArticleListViewController: UITableViewController {
         cell.detailTextLabel?.text = "Published: " + object["publish_date"]!
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        print("ArticleListViewController - tapped a cell")
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let object = objects[indexPath.row]
+            let controller = ArticleViewController()
+            controller.details = object
+            self.presentViewController(controller, animated: true, completion: nil)
+            
+        }
+    }
+
     
 }
