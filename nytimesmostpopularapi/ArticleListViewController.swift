@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ArticleListViewController: UITableViewController {
     
     var objects = [[String: String]]()
+    var core_data_array = [NSManagedObject]()
+
 
     
     func parseJSON(json: JSON) {
@@ -19,14 +22,46 @@ class ArticleListViewController: UITableViewController {
             let title = result["title"].stringValue
             let byline = result["byline"].stringValue
             let publish_date = result["published_date"].stringValue
-            let image_url = result["media"].arrayValue[0]["media-metadata"].arrayValue[0]["url"].rawString()!
+            
+            var image_url = "NULL"  //initialize dummy variable
+            if result["media"].arrayValue.count > 0{
+                image_url = result["media"].arrayValue[0]["media-metadata"].arrayValue[0]["url"].rawString()!
+            }
+            
             let obj = ["title": title, "byline": byline, "publish_date": publish_date, "image_url": image_url]
             objects.append(obj)
+            
+            //saveData("test")
         }
         
         print("ArticleListViewController - done parsing json")
         
         tableView.reloadData()
+    }
+    
+    func saveData(name:String)
+    {
+        print("ArticleListViewController - saveData")
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        //Data is in this case the name of the entity
+        //let options = NSManagedObject(entity: entity!,
+                                      //insertIntoManagedObjectContext:managedContext)
+        
+        //save to core data
+        let core_object = NSEntityDescription.insertNewObjectForEntityForName("NYTimesApiEntity", inManagedObjectContext: managedContext) as! NYTimesApiEntity
+        core_data_array.append(core_object)
+        
+        //var error: NSError?
+        do {
+            try managedContext.save()
+        } catch let error {
+            print("Could not cache the response \(error)")
+        }
+        //uncomment this line for adding the stored object to the core data array
+        //core_data_array.append(options)
+        print("just added to core data array")
     }
 
     override func viewDidLoad()
@@ -34,6 +69,11 @@ class ArticleListViewController: UITableViewController {
         super.viewDidLoad()
         
         print ("ArticleListViewController - viewDidLoad")
+        print(self.navigationController?.tabBarItem.title)
+        print(self.title)
+        print(self.tabBarItem.title)
+        print("testing nav controller in ArticleListViewController")
+        print(self.navigationController)
         
         //register cell
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
@@ -42,7 +82,7 @@ class ArticleListViewController: UITableViewController {
         print("registered cell")
 
         //read in API
-        let apiURLString = "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=98fa23b7d5b542f2be105b8384512928"
+        let apiURLString = "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/" + self.tabBarItem.title! + "/7.json?api-key=98fa23b7d5b542f2be105b8384512928"
         
         print ("MasterView - viewDidLoad set apiURLString to: ", apiURLString)
         
@@ -75,9 +115,8 @@ class ArticleListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print("ArticleListViewController - tableView: ", indexPath.row)
+        //print("ArticleListViewController - tableView: ", indexPath.row)
         
-        //let cell = tableView.dequeueReusableCellWithIdentifier("DefaultCell")!
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "DefaultCell")
         
         let object = objects[indexPath.row]
@@ -90,12 +129,14 @@ class ArticleListViewController: UITableViewController {
         
         print("ArticleListViewController - tapped a cell")
         
+        print(self.navigationController)
+        
         if let indexPath = self.tableView.indexPathForSelectedRow {
             let object = objects[indexPath.row]
             let controller = ArticleViewController()
             controller.details = object
-            self.presentViewController(controller, animated: true, completion: nil)
-            
+            self.navigationController!.pushViewController(controller, animated: false)
+
         }
     }
 

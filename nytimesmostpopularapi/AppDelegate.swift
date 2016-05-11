@@ -14,15 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tabController: CustomTabBarViewController?
+    var navigationController: UINavigationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         print("AppDelegate - application")
         
+        //navigationController = UINavigationController() -> both of these methods work
         tabController = CustomTabBarViewController()
+        navigationController = UINavigationController(rootViewController: tabController!);
+        //self.navigationController!.pushViewController(tabController!, animated: false)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.rootViewController = tabController
+        self.window!.rootViewController = navigationController
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
