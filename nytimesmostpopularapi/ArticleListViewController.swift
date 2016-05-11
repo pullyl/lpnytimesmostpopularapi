@@ -18,8 +18,9 @@ class ArticleListViewController: UITableViewController {
         for result in json["results"].arrayValue {
             let title = result["title"].stringValue
             let byline = result["byline"].stringValue
-            let publish_date = result["publish_date"].stringValue
-            let obj = ["title": title, "byline": byline, "publich_date": publish_date]
+            let publish_date = result["published_date"].stringValue
+            let image_url = result["media"].arrayValue[0]["media-metadata"].arrayValue[0]["url"].rawString()!
+            let obj = ["title": title, "byline": byline, "publish_date": publish_date, "image_url": image_url]
             objects.append(obj)
         }
         

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Section 1-->
+        <!--world-->
         <scene sceneID="9ak-KM-w2j">
             <objects>
                 <viewController id="uku-Ad-kFa" customClass="ViewController" customModule="nytimesmostpopularapi" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,13 +33,13 @@
                         </userGuides>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Section 1" id="hC0-Mj-tKO"/>
+                    <tabBarItem key="tabBarItem" title="world" image="world.png" id="hC0-Mj-tKO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcK-aP-5Gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62" y="171"/>
         </scene>
-        <!--Section 2-->
+        <!--health-->
         <scene sceneID="sTV-JE-bgV">
             <objects>
                 <tableViewController id="iIH-kt-dEV" customClass="ArticleListViewController" customModule="nytimesmostpopularapi" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                             <outlet property="delegate" destination="iIH-kt-dEV" id="5Kv-su-fBH"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Section 2" id="F6j-6o-9GJ"/>
+                    <tabBarItem key="tabBarItem" title="health" image="health.png" id="F6j-6o-9GJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYN-IE-AuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,4 +142,8 @@
             <point key="canvasLocation" x="525" y="-358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="health.png" width="800" height="800"/>
+        <image name="world.png" width="600" height="512"/>
+    </resources>
 </document>

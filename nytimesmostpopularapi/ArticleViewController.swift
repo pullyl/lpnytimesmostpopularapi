@@ -17,17 +17,11 @@ class ArticleViewController: UIViewController {
         
         print("ArticleViewController - viewDidLoad")
         
-        //[[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-        //self.presentingViewController.dismiss
-        
-        //set text on screen
-        let label = UILabel(frame: CGRectMake(0, 100, 200, 21))
-        label.center = CGPointMake(160, 284)
-        label.textAlignment = NSTextAlignment.Center
-        //label.text = details["title"]
-        label.text = "hello second world"
-        self.view.addSubview(label)
-    
+        let webView:UIWebView = UIWebView(frame: CGRectMake(15, 50, UIScreen.mainScreen().bounds.width - 20, UIScreen.mainScreen().bounds.height))
+        let html = "<img src=\"" + details["image_url"]! + "\">" + "<br><br><h1>" + details["title"]! + "</h1><br>" + details["publish_date"]!
+        webView.loadHTMLString(html, baseURL: nil)
+        self.view.addSubview(webView)
+                
         print("ArticleViewController - end viewDidLoad")
     }
 }
