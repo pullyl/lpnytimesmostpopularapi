@@ -23,6 +23,7 @@
 		8979C7251CE2C6360032ADBD /* art.png in Resources */ = {isa = PBXBuildFile; fileRef = 8979C7241CE2C6360032ADBD /* art.png */; };
 		8979C7271CE2C9D20032ADBD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */; };
 		898611961CE18860003191CD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898611951CE18860003191CD /* ArticleListViewController.swift */; };
+		89AC6DF21CE4B80500E2E0BA /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89AC6DF11CE4B80500E2E0BA /* readme.txt */; };
 		89B4CCF61CE35843000DEB00 /* NYTimesApiEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4CCF41CE35843000DEB00 /* NYTimesApiEntity+CoreDataProperties.swift */; };
 		89B4CCF71CE35843000DEB00 /* NYTimesApiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4CCF51CE35843000DEB00 /* NYTimesApiEntity.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		8979C7241CE2C6360032ADBD /* art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = art.png; sourceTree = "<group>"; };
 		8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		898611951CE18860003191CD /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		89AC6DF11CE4B80500E2E0BA /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		89B4CCF41CE35843000DEB00 /* NYTimesApiEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NYTimesApiEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89B4CCF51CE35843000DEB00 /* NYTimesApiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTimesApiEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				8979C7221CE2C3160032ADBD /* health.png */,
 				8979C7261CE2C9D20032ADBD /* CustomTabBarViewController.swift */,
 				8979C7201CE2C3020032ADBD /* world.png */,
+				89AC6DF11CE4B80500E2E0BA /* readme.txt */,
 			);
 			path = nytimesmostpopularapi;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AC6DF21CE4B80500E2E0BA /* readme.txt in Resources */,
 				89322D891CE130F3002C683E /* LaunchScreen.storyboard in Resources */,
 				89322D861CE130F3002C683E /* Assets.xcassets in Resources */,
 				8979C7251CE2C6360032ADBD /* art.png in Resources */,
