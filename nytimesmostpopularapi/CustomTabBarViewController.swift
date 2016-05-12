@@ -5,6 +5,8 @@
 //  Created by Lauren Pully on 5/10/16.
 //  Copyright © 2016 laurenpully. All rights reserved.
 //
+//  Customized tab bar view controller that programatically creates screens for our NYTAPI app
+//
 
 import Foundation
 import UIKit

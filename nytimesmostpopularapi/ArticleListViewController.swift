@@ -5,6 +5,8 @@
 //  Created by Lauren Pully on 5/9/16.
 //  Copyright © 2016 laurenpully. All rights reserved.
 //
+// Detailed view controller to display information about an article
+//
 
 import Foundation
 import UIKit
@@ -25,8 +27,8 @@ class ArticleListViewController: UITableViewController {
             let publish_date = result["published_date"].stringValue
             
             var image_url = "NULL"  //initialize dummy variable
-            if result["media"].arrayValue.count > 0{
-                image_url = result["media"].arrayValue[0]["media-metadata"].arrayValue[0]["url"].rawString()!
+            if result["media"].arrayValue.count > 0{ //pull the largest image for each article
+                image_url = result["media"].arrayValue[0]["media-metadata"].arrayValue[result["media"].arrayValue[0]["media-metadata"].count - 1]["url"].rawString()!
             }
             
             addItemIntoCoreData(title, myByline: byline, myPublish_date: publish_date, myImage_url: image_url)
@@ -98,7 +100,6 @@ class ArticleListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "DefaultCell")
-        
         let object = objects[indexPath.row]
         cell.textLabel!.text = object.title
         cell.detailTextLabel?.text = "Published: " + object.published_date!
@@ -179,9 +180,9 @@ class ArticleListViewController: UITableViewController {
         
         //setup fetching criteria
         let fetch = NSFetchRequest(entityName: "NYTimesApiEntity")
-        let sort = NSSortDescriptor(key: "published_date", ascending: true)
-        let predicate = NSPredicate(format: "title == %@", cat)
+        let predicate = NSPredicate(format: "category == %@", cat)
         fetch.predicate = predicate
+        let sort = NSSortDescriptor(key: "published_date", ascending: false)
         fetch.sortDescriptors = [sort]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetch, managedObjectContext: managedObjectContext, sectionNameKeyPath: "title", cacheName: nil)
@@ -212,7 +213,6 @@ class ArticleListViewController: UITableViewController {
         core_data_array.append(item!)
         
         print("end addItemIntoCoreData")
-        
     }
     
     func refreshData(sender:AnyObject) {
@@ -249,7 +249,10 @@ class ArticleListViewController: UITableViewController {
         
         //assign core data to objects and load table
         objects = core_data_array
+        print(objects.count)
+        print(core_data_array.count)
         tableView.reloadData()
-        saveContext()}
+        saveContext()
+    }
     
 }

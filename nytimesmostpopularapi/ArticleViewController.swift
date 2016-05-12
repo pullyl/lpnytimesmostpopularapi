@@ -5,6 +5,8 @@
 //  Created by Lauren Pully on 5/9/16.
 //  Copyright © 2016 laurenpully. All rights reserved.
 //
+//  Main view controller that queries api, manages core data, and displays data on a table
+//
 
 import UIKit
 
