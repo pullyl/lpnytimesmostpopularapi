@@ -18,5 +18,6 @@ extension NYTimesApiEntity {
     @NSManaged var byline: String?
     @NSManaged var published_date: String?
     @NSManaged var image_url: String?
+    @NSManaged var category: String?
 
 }

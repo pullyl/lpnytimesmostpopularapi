@@ -60,12 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "laurenpully.nytimesmostpopularapi" in the application's documents Application Support directory.
+        print("AppDelegate - applicationDocumentsDirectory")
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+        print("AppDelegate - managedObjectModel")
         let modelURL = NSBundle.mainBundle().URLForResource("nytimesmostpopularapi", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
@@ -73,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
+        print("AppDelegate - persistentStoreCoordinator")
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
@@ -97,6 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+        print("AppDelegate - managedObjectContext")
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
@@ -106,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
+        print("AppDelegate - saveContext")
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()
