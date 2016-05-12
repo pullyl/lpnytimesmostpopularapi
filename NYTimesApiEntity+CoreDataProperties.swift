@@ -2,7 +2,7 @@
 //  NYTimesApiEntity+CoreDataProperties.swift
 //  nytimesmostpopularapi
 //
-//  Created by Lauren Pully on 5/11/16.
+//  Created by Lauren Pully on 5/12/16.
 //  Copyright © 2016 laurenpully. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

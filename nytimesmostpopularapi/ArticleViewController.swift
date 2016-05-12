@@ -9,7 +9,7 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
-    var details: [String: String]!
+    var details: NYTimesApiEntity!
     
     
     override func viewDidLoad() {
@@ -21,7 +21,10 @@ class ArticleViewController: UIViewController {
         print(self.navigationController)
         
         let webView:UIWebView = UIWebView(frame: CGRectMake(15, 50, UIScreen.mainScreen().bounds.width - 20, UIScreen.mainScreen().bounds.height))
-        let html = "<img src=\"" + details["image_url"]! + "\">" + "<br><br><h1>" + details["title"]! + "</h1><br>" + details["publish_date"]!
+        
+        var html = "<img src=\"" + details.image_url! + "\">" + "<br><br><h1>"
+        html = html + details.title! + "</h1><br>" + details.published_date!
+        
         webView.loadHTMLString(html, baseURL: nil)
         self.view.addSubview(webView)
         
